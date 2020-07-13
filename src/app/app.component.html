@@ -1,9 +1,23 @@
 <h1>Hello Angular World!</h1>
 
-<p>{{ title }}</p>
+<input 
+  type="text"
+  (keyup.enter)="onInput($event)"
+  (blur)="onBlur(myInput.value)"
+  #myInput
+>
+
+
+<button (click)="onClick()">Click me!</button>
+
+<p><strong>{{inputValue}}</strong></p>
+
+<!-- <img [src]="img"> -->
+
+<!-- <p>{{ title }}</p>
 <p><strong>{{ number - 2 }}</strong></p>
 <p>{{ array }}</p>
-<p>{{ obj }}</p>
+<p>{{ obj }}</p> -->
 
 <hr>
 <app-post></app-post>
