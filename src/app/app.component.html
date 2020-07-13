@@ -1,9 +1,32 @@
 <h1>Hello Angular World!</h1>
 
 <button (click)="toggle = !toggle">Toggle</button>
+<button (click)="toggle = 111">Set111</button>
 
-<p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, cupiditate?</p>
+<div [ngSwitch]="toggle">
+  <p *ngSwitchCase="true">Lorem, ipsum.</p>
+  <p *ngSwitchCase="false">Lorem ipsum dolor sit.</p>
+  <p *ngSwitchDefault>Default</p>
+</div>
 
-<ng-template #blueP>
-  <p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, cupiditate?</p>
-</ng-template>
+<ul>
+  <li *ngFor="let n of arr; let i = index">
+    {{i + 1}}<strong>{{n}}</strong>
+  </li>
+</ul>
+
+<hr>
+
+<ul style="list-style: none">
+  <li *ngFor="let post of objs">
+    <p>{{post.title}} <b>{{post.author}}</b></p>
+    <ul>
+      <li *ngFor="let comment of post.comments">
+        <div>
+          <small>{{comment.name}}</small>
+          <p>{{comment.text}}</p>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
