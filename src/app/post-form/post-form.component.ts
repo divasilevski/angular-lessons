@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { Post } from '../app.component';
 
 @Component({
@@ -23,13 +23,26 @@ export class PostFormComponent implements OnInit {
     if (this.text.trim() && this.title.trim()) {
       const post: Post = {
         title: this.title,
-        text: this.text
+        text: this.text,
+        id: Date.now()
       }
 
       this.onAdd.emit(post);
 
       this.text = this.title = '';
     }
+  }
+
+  addEmptyPost() {
+    const post: Post = {
+      title: 'Empty',
+      text: 'empty',
+      id: Date.now()
+    }
+
+    this.onAdd.emit(post);
+
+    this.text = this.title = '';
   }
 
   focusTitle() {
