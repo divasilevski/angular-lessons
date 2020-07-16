@@ -2,8 +2,15 @@
   <h1>Angular Pipes</h1>
   
   <input type="text" [(ngModel)]="search">
+
   <button class="btn" (click)="searchField = 'title'">Title</button>
   <button class="btn" (click)="searchField = 'text'">Text</button>
+
+  <hr>
+
+  <button class="btn" (click)="addPost()">Add Post</button>
+
+  <hr>
 
   <div 
     class="card"
