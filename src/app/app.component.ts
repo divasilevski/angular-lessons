@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
+import { Subject, Subscription } from 'rxjs';
 
 export interface Post {
   title: string;
@@ -18,31 +17,18 @@ export class AppComponent {
 
   sub: Subscription;
 
+  stream$: Subject<number> = new Subject<number>();
+  counter = 0;
+
   constructor(){
-    const stream$ = new Observable(observer => {
-      setTimeout(() => {
-        observer.next(1);
-      }, 1500)
+    this.sub = this.stream$
+      .subscribe(value => console.log('sub', value))
+  
+  }
 
-      setTimeout(() => {
-        observer.complete();
-      }, 2100)
-
-      setTimeout(() => {
-        observer.error('Something went wrong');
-      }, 2000)
-
-      setTimeout(() => {
-        observer.next(2);
-      }, 2500)
-    })
-
-    this.sub = stream$
-      .subscribe(
-        value => console.log('next', value),
-        error => console.log('error', error),
-        () => console.log('complite')
-      )
+  next() {
+    this.counter++;
+    this.stream$.next(this.counter);
   }
 
   stop() {
