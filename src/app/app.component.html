@@ -16,6 +16,14 @@
         <small *ngIf="form.get('email').errors.email">
           Введите коррректный email.
         </small>
+
+        <small *ngIf="form.get('email').errors.restrictedEmail">
+          Email {{ form.get('email').value }} запрещён.
+        </small>
+
+        <small *ngIf="form.get('email').errors.uniqEmail">
+          Email занят.
+        </small>
       </div>
     </div>
 
@@ -34,6 +42,7 @@
           Длина должна быть не менее {{ form.get('password').errors.minlength.requiredLength }}. 
           Сейчас кол-во символов {{ form.get('password').errors.minlength.actualLength }}
         </small>
+
       </div>
     </div>
 
@@ -69,7 +78,7 @@
       </div>
     </div>
 
-    <button class="btn" type="submit" [disabled]="form.invalid">Отправить</button>
+    <button class="btn" type="submit" [disabled]="form.invalid || form.pending">Отправить</button>
 
   </form>
 </div>
