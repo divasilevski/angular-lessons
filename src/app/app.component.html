@@ -37,13 +37,13 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" formGroupName="adress">
       <h2>Адрес</h2>
 
       <div class="form-control">
         <label>Страна</label>
 
-        <select>
+        <select formControlName="country">
           <option value="ru">Россия</option>
           <option value="ua">Украина</option>
           <option value="by">Беларусь</option>
@@ -51,10 +51,10 @@
       </div>
 
       <div class="form-control">
-        <input type="text">
+        <input type="text" formControlName="city" placeholder="Город">
       </div>
 
-      <button class="btn" type="button">Выбрать столицу</button>
+      <button class="btn" type="button" (click)="setCapital()">Выбрать столицу</button>
     </div>
 
     <div class="card">
