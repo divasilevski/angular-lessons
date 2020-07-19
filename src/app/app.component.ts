@@ -7,6 +7,10 @@ import { Component } from '@angular/core'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  appState = 'off'
 
+  handleChange() {
+    console.log(this.appState)
+  }
 }
 
