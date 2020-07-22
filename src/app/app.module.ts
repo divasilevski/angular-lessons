@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser'
 import {NgModule} from '@angular/core'
-import {AboutPageModule} from './about-page/about-page.module'
 
 import {AppComponent} from './app.component'
 import {FormsModule} from '@angular/forms'
@@ -19,7 +18,6 @@ import {SharedModule} from './shared/shared.module'
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AboutPageModule,
     SharedModule
   ],
   providers: [],
