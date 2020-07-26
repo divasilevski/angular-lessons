@@ -3,7 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostPageComponent } from './post-page/post-page.component';
-
+import { AdminModule } from './admin/admin.module'
 
 const routes: Routes = [
   {path: '', component: MainLayoutComponent, children: [
