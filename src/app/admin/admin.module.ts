@@ -1,3 +1,4 @@
+import { PostsService } from './../shared/posts.service';
 import { AuthGuard } from './shared/services/auth.guard';
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
@@ -37,6 +38,6 @@ const routes: Routes = [
     SharedModule
   ],
   exports: [RouterModule],
-  providers: [AuthService, AuthGuard]
+  providers: [AuthService, AuthGuard, PostsService]
 })
 export class AdminModule { }
