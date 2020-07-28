@@ -1,6 +1,6 @@
 import { PostsService } from './../shared/posts.service';
 import { AuthGuard } from './shared/services/auth.guard';
-import { NgModule } from '@angular/core'
+import { NgModule, Provider } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterModule, Routes } from '@angular/router'
 import { AdminLayoutComponent } from './shared/components/admin-layout/admin-layout.component';
@@ -11,6 +11,8 @@ import { EditPageComponent } from './edit-page/edit-page.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AuthService } from './shared/services/auth.service'
 import { SharedModule } from '../shared/shared.module'
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '../shared/auth.interceptor';
 
 const routes: Routes = [
   {path: '', component: AdminLayoutComponent, children: [
@@ -21,6 +23,14 @@ const routes: Routes = [
       {path: 'post/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]},
     ]}
 ]
+
+
+const INTERCEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  multi: true,
+  useClass: AuthInterceptor
+}
+
 
 @NgModule({
   declarations: [
@@ -38,6 +48,6 @@ const routes: Routes = [
     SharedModule
   ],
   exports: [RouterModule],
-  providers: [AuthService, AuthGuard, PostsService]
+  providers: [INTERCEPTOR_PROVIDER, AuthService, AuthGuard, PostsService]
 })
 export class AdminModule { }
