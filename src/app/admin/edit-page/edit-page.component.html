@@ -24,7 +24,7 @@
     <button
       type="submit"
       class="btn btn-primary"
-      [disabled]="form.invalid"
+      [disabled]="form.invalid || submitted"
     >Обновить пост</button>
   </form>
 </div>
