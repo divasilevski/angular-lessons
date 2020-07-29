@@ -1,3 +1,4 @@
+import { SearchPipe } from './shared/search.pipe';
 import { PostsService } from './../shared/posts.service';
 import { AuthGuard } from './shared/services/auth.guard';
 import { NgModule, Provider } from '@angular/core'
@@ -38,7 +39,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
     LoginPageComponent,
     DashboardPageComponent,
     CreatePageComponent,
-    EditPageComponent
+    EditPageComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
