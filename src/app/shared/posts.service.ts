@@ -23,4 +23,19 @@ export class PostsService {
       }))
   }
 
+
+  getAll() {
+    return this.http.get(`${environment.fbDbUrl}/posts.json`)
+      .pipe(map((response: { [key: string]: any }) => {
+        return Object
+          .keys(response)
+          .map(key => ({
+            ...response[key],
+            id: key,
+            data: new Date(response[key].date)
+          }))
+        
+      }))
+  }
+
 }
