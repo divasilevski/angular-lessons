@@ -1,3 +1,4 @@
+import { AlertService } from './shared/services/alert.service';
 import { SearchPipe } from './shared/search.pipe';
 import { PostsService } from './../shared/posts.service';
 import { AuthGuard } from './shared/services/auth.guard';
@@ -14,6 +15,7 @@ import { AuthService } from './shared/services/auth.service'
 import { SharedModule } from '../shared/shared.module'
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from '../shared/auth.interceptor';
+import { AlertComponent } from './shared/components/alert/alert.component';
 
 const routes: Routes = [
   {path: '', component: AdminLayoutComponent, children: [
@@ -40,7 +42,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
     DashboardPageComponent,
     CreatePageComponent,
     EditPageComponent,
-    SearchPipe
+    SearchPipe,
+    AlertComponent
   ],
   imports: [
     CommonModule,
@@ -50,6 +53,6 @@ const INTERCEPTOR_PROVIDER: Provider = {
     SharedModule
   ],
   exports: [RouterModule],
-  providers: [INTERCEPTOR_PROVIDER, AuthService, AuthGuard, PostsService]
+  providers: [AlertService, INTERCEPTOR_PROVIDER, AuthService, AuthGuard, PostsService]
 })
 export class AdminModule { }
