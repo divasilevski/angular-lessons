@@ -1,6 +1,5 @@
 import { AlertService } from './shared/services/alert.service';
 import { SearchPipe } from './shared/search.pipe';
-import { PostsService } from './../shared/posts.service';
 import { AuthGuard } from './shared/services/auth.guard';
 import { NgModule, Provider } from '@angular/core'
 import { CommonModule } from '@angular/common'
@@ -53,6 +52,6 @@ const INTERCEPTOR_PROVIDER: Provider = {
     SharedModule
   ],
   exports: [RouterModule],
-  providers: [AlertService, INTERCEPTOR_PROVIDER, AuthService, AuthGuard, PostsService]
+  providers: [AlertService, INTERCEPTOR_PROVIDER, AuthService, AuthGuard]
 })
 export class AdminModule { }

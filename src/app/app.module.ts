@@ -1,6 +1,6 @@
-import { AuthInterceptor } from './shared/auth.interceptor';
+import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Provider } from '@angular/core';
+import { NgModule} from '@angular/core';
 import ruLocale from '@angular/common/locales/ru'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,7 @@ registerLocaleData(ruLocale, 'ru')
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
