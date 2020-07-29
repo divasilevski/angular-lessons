@@ -1,6 +1,7 @@
 import { AuthInterceptor } from './shared/auth.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Provider } from '@angular/core';
+import ruLocale from '@angular/common/locales/ru'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,9 @@ import { MainLayoutComponent } from './shared/components/main-layout/main-layout
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { PostComponent } from './shared/components/post/post.component';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(ruLocale, 'ru')
 
 @NgModule({
   declarations: [
