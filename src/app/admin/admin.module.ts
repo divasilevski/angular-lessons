@@ -1,5 +1,4 @@
 import { AlertService } from './shared/services/alert.service';
-import { SearchPipe } from './shared/search.pipe';
 import { AuthGuard } from './shared/services/auth.guard';
 import { NgModule, Provider } from '@angular/core'
 import { CommonModule } from '@angular/common'
@@ -9,11 +8,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 import { AuthService } from './shared/services/auth.service'
 import { SharedModule } from '../shared/shared.module'
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from '../shared/auth.interceptor';
 import { AlertComponent } from './shared/components/alert/alert.component';
 
 const routes: Routes = [
@@ -34,12 +31,10 @@ const routes: Routes = [
     DashboardPageComponent,
     CreatePageComponent,
     EditPageComponent,
-    SearchPipe,
     AlertComponent
   ],
   imports: [
     CommonModule,
-    FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     SharedModule

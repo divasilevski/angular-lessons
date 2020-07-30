@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   imports: [
     HttpClientModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+    FormsModule
   ],
   exports: [
     HttpClientModule,
     QuillModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

@@ -12,6 +12,8 @@ export class HomePageComponent implements OnInit {
 
   posts$: Observable<Post[]>
 
+  searchStr=''
+
   constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
