@@ -1,9 +1,16 @@
-<nav class="navbar main">
-  <h1>Angular Blog</h1>
-</nav>
+<div class="wrapper">
+  <nav class="navbar bg-dark">
+    <h1>Angular Lessons (Blog)</h1>
+  </nav>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 
-<div class="container">
-  <router-outlet></router-outlet>
+  <div class="push"></div>
 </div>
 
-<footer class="footer"><a [routerLink]="['/admin']">admin-page</a></footer>
+<footer class="footer">
+  <a [routerLink]="['/admin', 'dashboard']">Administrator page</a>
+  <a href="https://github.com/divasilevski/angular-lessons">Github</a>
+</footer>

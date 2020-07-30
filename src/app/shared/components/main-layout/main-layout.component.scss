@@ -1,4 +1,25 @@
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -30px;
+}
+.footer,
+.push {
+  height: 30px;
+}
+
 .footer {
-  position: absolute;
+  background-color: var(--dark-color);
   bottom: 0;
+  text-align: center;
+
+  a {
+    color: #fff;
+    font-size: smaller;
+    margin-right: 15px;
+  }
+
+}
+
+nav {
+  background-color: #111111
 }
