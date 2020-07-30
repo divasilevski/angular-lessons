@@ -1,3 +1,4 @@
+import { SearchPipe } from './pipes/search.pipe';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
@@ -5,6 +6,9 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
+  declarations: [
+    SearchPipe
+  ],
   imports: [
     HttpClientModule,
     QuillModule.forRoot(),
@@ -12,6 +16,7 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     HttpClientModule,
+    SearchPipe,
     QuillModule,
     FormsModule
   ]

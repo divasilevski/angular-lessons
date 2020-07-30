@@ -1,4 +1,4 @@
-import { SearchPipe } from './shared/search.pipe';
+
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Provider} from '@angular/core';
@@ -30,8 +30,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     MainLayoutComponent,
     HomePageComponent,
     PostPageComponent,
-    PostComponent,
-    SearchPipe
+    PostComponent
   ],
   imports: [
     BrowserModule,

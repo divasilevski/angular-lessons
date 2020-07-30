@@ -1,4 +1,5 @@
-import { Post } from './interfaces';
+import { Post } from './../interfaces';
+
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

@@ -9,8 +9,18 @@
     <small>{{post.author}}</small>
   </div>
 
-  <button
-    [routerLink]="['/post', post.id]"
-    class="btn btn-dark"
-  >Открыть</button>
+
+  <div class="quill">
+    <quill-view-html [content]="post.text"></quill-view-html>
+  </div>
+
+  <div class="dots">...</div>
+  
+  <div class="right">
+    <button
+      [routerLink]="['/post', post.id]"
+      class="btn btn-dark right"
+    >Открыть</button>
+  </div>
+  
 </div>
