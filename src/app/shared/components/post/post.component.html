@@ -10,17 +10,20 @@
   </div>
 
 
-  <div class="quill">
+  <div class="quill" #quill>
     <quill-view-html [content]="post.text"></quill-view-html>
   </div>
 
-  <div class="dots">...</div>
+  <div *ngIf="isBigPost">
+    <div class="dots">...</div>
   
-  <div class="right">
-    <button
-      [routerLink]="['/post', post.id]"
-      class="btn btn-dark right"
-    >Открыть</button>
+    <div class="right">
+      <button
+        [routerLink]="['/post', post.id]"
+        class="btn btn-dark right"
+      >Открыть</button>
+    </div>
   </div>
+ 
   
 </div>
