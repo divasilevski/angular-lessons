@@ -27,13 +27,6 @@ const routes: Routes = [
 ]
 
 
-const INTERCEPTOR_PROVIDER: Provider = {
-  provide: HTTP_INTERCEPTORS,
-  multi: true,
-  useClass: AuthInterceptor
-}
-
-
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -52,6 +45,6 @@ const INTERCEPTOR_PROVIDER: Provider = {
     SharedModule
   ],
   exports: [RouterModule],
-  providers: [AlertService, INTERCEPTOR_PROVIDER, AuthService, AuthGuard]
+  providers: [AlertService, AuthService, AuthGuard]
 })
 export class AdminModule { }

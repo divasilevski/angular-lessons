@@ -36,9 +36,13 @@ export class CreatePageComponent implements OnInit {
       date: new Date
     }
 
+    console.log(post)
+
     this.postsService.create(post).subscribe(() => {
       this.form.reset()
       this.alert.success('Пост был создан')
+    }, error => {
+      this.alert.danger('Что то пошло не так')
     })
   }
 
