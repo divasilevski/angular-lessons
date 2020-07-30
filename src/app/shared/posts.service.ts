@@ -32,7 +32,7 @@ export class PostsService {
           .map(key => ({
             ...response[key],
             id: key,
-            data: new Date(response[key].date)
+            date: new Date(response[key].date)
           }))
       }))
   }
@@ -43,7 +43,7 @@ export class PostsService {
         return {
             ...post,
             id,
-            data: new Date(post.date)
+            date: new Date(post.date)
           }
       }))
   }
